@@ -38,10 +38,9 @@ public class MenuItemDaoCollectionImpl implements MenuItemDao{
 		}
 		return menu;
 	}
-	
+	@Override
 	public void modifyMenuItem(MenuItem menuItem) {
 		
-		ArrayList<MenuItem> menu = new ArrayList<MenuItem>();
 		for(MenuItem m:menuItemList) {
 			if(m.getId()==(menuItem.getId())) {
 				m.setId(menuItem.getId());
@@ -53,7 +52,7 @@ public class MenuItemDaoCollectionImpl implements MenuItemDao{
 			}
 		}
 	}
-	
+	@Override
 	public MenuItem getMenuItem(long menuItemId) {
 		MenuItem menu=null;
 		for(MenuItem m:menuItemList) {
