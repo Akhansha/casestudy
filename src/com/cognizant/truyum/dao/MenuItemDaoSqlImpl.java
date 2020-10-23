@@ -9,11 +9,11 @@ import java.util.Date;
 import java.util.List;
 import com.cognizant.truyum.model.MenuItem;
 
-public class MenuItemDaoSqlImpl {
+public class MenuItemDaoSqlImpl implements MenuItemDao{
 
-	public List<MenuItem> getMenuItemListAdmin(){
-		
-		List<MenuItem> lst = new ArrayList<>();
+	public List<MenuItem> getMenuItemListAdmin()
+	{	
+		List<MenuItem> lst = new ArrayList<MenuItem>();
 		try {
 			Connection conn = ConnectionHandler.getConnection();
 			String sql = "select * from menu_item";
@@ -54,7 +54,7 @@ public class MenuItemDaoSqlImpl {
 	
 	public List<MenuItem> getMenuItemListCustomer(){
 		
-		List<MenuItem> lst = new ArrayList<>();
+		List<MenuItem> lst = new ArrayList<MenuItem>();
 		try {
 			Connection conn = ConnectionHandler.getConnection();
 			String sql = "select * from menu_item where me_active='yes' and me_dol<'2018-12-02'";
@@ -133,7 +133,8 @@ public class MenuItemDaoSqlImpl {
 		
 		return m;
 	}
-	public void editMenuItem(MenuItem menuItem){
+	@Override
+	public void modifyMenuItem(MenuItem menuItem){
 		
 		long id= menuItem.getId();
 		String name= menuItem.getName();

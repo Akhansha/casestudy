@@ -5,8 +5,13 @@ import com.cognizant.truyum.model.MenuItem;
 
 public class CartDaoCollectionImplTest {
 
+	@SuppressWarnings("static-access")
 	public static void main(String[] args) {
 		
+		CartDaoCollectionImplTest C= new CartDaoCollectionImplTest();
+		C.testAddCartItem();
+		C.testGetItemAllCartItems();
+		C.testRemoveCartItem();
 	}
 	
 	public static void testAddCartItem() {
@@ -21,19 +26,23 @@ public class CartDaoCollectionImplTest {
 			System.out.println("MenuItem List:"+ lst);
 		} catch (CartEmptyException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Cart is Empty!!");
 		}
 	}
 	
-	public static void testGetItemAllCartItems() throws CartEmptyException{
+	public static void testGetItemAllCartItems(){
 		
 		CartDaoCollectionImpl cartDaoImpl = new CartDaoCollectionImpl();
 		CartDao cartDao = cartDaoImpl;
 		List<MenuItem> lst;
-		lst= cartDao.getAllCartItems(1);
-		
-		for(MenuItem m:lst) {
-			System.out.println(m);
+		try {
+			lst= cartDao.getAllCartItems(1);
+			for(MenuItem m:lst) {
+				System.out.println(m);
+			}
+		} catch (CartEmptyException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Cart is Empty!!");
 		}
 		
 	}
@@ -48,7 +57,7 @@ public class CartDaoCollectionImplTest {
 			System.out.println(newlst);
 		} catch (CartEmptyException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Cart is Empty!!");
 		}
 		
 	}
