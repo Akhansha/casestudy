@@ -18,7 +18,7 @@ public class MenuItemDaoCollectionImpl implements MenuItemDao{
 			lst.add(m3);
 			MenuItem m4 = new MenuItem(4,"French Fries",(float) 57.00,false,DateUtil.convertToDate("02/07/2017"),"Starters",true);
 			lst.add(m4);
-			MenuItem m5 = new MenuItem(3,"Chocolate Brownie",(float) 32.00,true,DateUtil.convertToDate("02/11/2022"),"Desert",true);
+			MenuItem m5 = new MenuItem(5,"Chocolate Brownie",(float) 32.00,true,DateUtil.convertToDate("02/11/2022"),"Desert",true);
 			lst.add(m5);
 			menuItemList=lst;
 		}
