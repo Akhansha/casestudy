@@ -52,7 +52,7 @@ public class CartDaoSqlImpl implements CartDao{
 				String active = rs.getString("me_active");
 				Date dateOfLaunch = rs.getDate("me_dol");
 				String category = rs.getString("me_category");
-				String freeDelivery = rs.getString("me_fd");
+				String freeDelivery = rs.getString("me_freedelivery");
 				
 				boolean a = false;
 				boolean d = false;

@@ -9,8 +9,11 @@ public class CartDaoCollectionImplTest {
 	public static void main(String[] args) {
 		
 		CartDaoCollectionImplTest C= new CartDaoCollectionImplTest();
+		System.out.println("Add Item:");
 		C.testAddCartItem();
+		System.out.println("Items in Cart:");
 		C.testGetItemAllCartItems();
+		System.out.println("Remove a Cart item:");
 		C.testRemoveCartItem();
 	}
 	
