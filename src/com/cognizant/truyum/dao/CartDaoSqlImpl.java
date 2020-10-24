@@ -23,6 +23,7 @@ public class CartDaoSqlImpl implements CartDao{
 			stmt.setLong(1, userId);
 			stmt.setLong(2, menuItemId);
 			stmt.execute();
+			stmt.clearParameters();
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -41,8 +42,9 @@ public class CartDaoSqlImpl implements CartDao{
 			Connection conn = ConnectionHandler.getConnection();
 			String sql = "select * from menu_item m Join cart c On m.me_id=c.ct_menu_id where c.ct_user_id=?";
 			PreparedStatement stmt = conn.prepareStatement(sql);
-			
+			stmt.setLong(1, userId);
 			ResultSet rs = stmt.executeQuery();
+			stmt.clearParameters();
 			float value = 0;
 			while(rs.next()) {
 				long id = rs.getLong("me_id");
@@ -91,6 +93,7 @@ public class CartDaoSqlImpl implements CartDao{
 			stmt.setLong(1, userId);
 			stmt.setLong(2, menuItemId);
 			stmt.executeUpdate();
+			stmt.clearParameters();
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
