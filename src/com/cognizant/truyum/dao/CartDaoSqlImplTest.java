@@ -7,7 +7,13 @@ import com.cognizant.truyum.model.MenuItem;
 public class CartDaoSqlImplTest {
 
 	public static void main(String[] args) {
-		
+		CartDaoSqlImplTest C = new CartDaoSqlImplTest();
+		System.out.println("Adding Items:");
+		C.testAddCartItem();
+		System.out.println("Items in Cart:");
+		C.testGetAllCartItems();
+		System.out.println("Remove Item:");
+		C.testRemoveCartItem();
 	}
 	public void testAddCartItem() {
 		
