@@ -17,8 +17,7 @@ public class CartDaoSqlImplTest {
 	}
 	public void testAddCartItem() {
 		
-		CartDaoSqlImpl cartDaoImpl = new CartDaoSqlImpl();
-		CartDao cartDao = cartDaoImpl;
+		CartDao cartDao = new CartDaoSqlImpl();
 		cartDao.addCartItem(1, 1);
 		cartDao.addCartItem(1, 4);
 		List<MenuItem> lst;
@@ -32,8 +31,7 @@ public class CartDaoSqlImplTest {
 	}
 	public void testGetAllCartItems() {
 		
-		CartDaoSqlImpl cartDaoImpl = new CartDaoSqlImpl();
-		CartDao cartDao = cartDaoImpl;
+		CartDao cartDao = new CartDaoSqlImpl();
 		List<MenuItem> lst;
 		try {
 			lst= cartDao.getAllCartItems(1);
@@ -47,8 +45,7 @@ public class CartDaoSqlImplTest {
 	}
 	public void testRemoveCartItem() {
 		
-		CartDaoSqlImpl cartDaoImpl = new CartDaoSqlImpl();
-		CartDao cartDao = cartDaoImpl;
+		CartDao cartDao = new CartDaoSqlImpl();
 		cartDao.removeCartItem(1, 4);
 		List<MenuItem> newlst;
 		try {

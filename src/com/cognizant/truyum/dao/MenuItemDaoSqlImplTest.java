@@ -17,7 +17,7 @@ public class MenuItemDaoSqlImplTest {
 	}
 	public void testGetMenuItemListAdmin() {
 		
-		MenuItemDaoSqlImpl menuItemDao = new MenuItemDaoSqlImpl();
+		MenuItemDao menuItemDao = new MenuItemDaoSqlImpl();
 		List<MenuItem> menuItems = menuItemDao.getMenuItemListAdmin();
 		for(MenuItem m:menuItems) {
 			System.out.println(m.toString());
@@ -25,7 +25,7 @@ public class MenuItemDaoSqlImplTest {
 	}
 	public void testGetMenuItemListCustomer() {
 		
-		MenuItemDaoSqlImpl menuItemDao = new MenuItemDaoSqlImpl();
+		MenuItemDao menuItemDao = new MenuItemDaoSqlImpl();
 		List<MenuItem> menuItems = menuItemDao.getMenuItemListCustomer();
 		for(MenuItem m:menuItems) {
 			System.out.println(m.toString());
