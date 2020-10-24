@@ -40,7 +40,7 @@ public class CartDaoSqlImpl implements CartDao{
 		Cart C = new Cart(lst,0);
 		try {
 			Connection conn = ConnectionHandler.getConnection();
-			String sql = "select * from menu_item m Join cart c On m.me_id=c.ct_menu_id where c.ct_user_id=?";
+			String sql = "select m.me_id,m.me_name,m.me_price,m.me_active,m.me_dol,m.me_category,m.me_freedelivery from menu_item m Join cart c On m.me_id=c.ct_menu_id where c.ct_user_id=?";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setLong(1, userId);
 			ResultSet rs = stmt.executeQuery();
