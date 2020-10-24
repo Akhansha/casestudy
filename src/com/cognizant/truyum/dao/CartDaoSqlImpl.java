@@ -43,12 +43,12 @@ public class CartDaoSqlImpl implements CartDao{
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			
 			ResultSet rs = stmt.executeQuery();
-			float value;
+			float value = 0;
 			while(rs.next()) {
 				long id = rs.getLong("me_id");
 				String name = rs.getString("me_name");
 				float price = rs.getFloat("me_price");
-				value = price;
+				value = value+price;
 				String active = rs.getString("me_active");
 				Date dateOfLaunch = rs.getDate("me_dol");
 				String category = rs.getString("me_category");
