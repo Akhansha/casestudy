@@ -16,7 +16,7 @@ public class MenuItemDaoSqlImpl implements MenuItemDao{
 		List<MenuItem> lst = new ArrayList<MenuItem>();
 		try {
 			Connection conn = ConnectionHandler.getConnection();
-			String sql = "select * from menu_item";
+			String sql = "select me_id,me_name,me_price,me_active,me_dol,me_category,me_freedelivery from menu_item";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			ResultSet rs = stmt.executeQuery();
 			stmt.clearParameters();
@@ -57,7 +57,7 @@ public class MenuItemDaoSqlImpl implements MenuItemDao{
 		List<MenuItem> lst = new ArrayList<MenuItem>();
 		try {
 			Connection conn = ConnectionHandler.getConnection();
-			String sql = "select * from menu_item where me_active='yes' and me_dol<'2018-12-02'";
+			String sql = "select me_id,me_name,me_price,me_active,me_dol,me_category,me_freedelivery from menu_item where me_active='yes' and me_dol<'2018-12-02'";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			ResultSet rs = stmt.executeQuery();
 			stmt.clearParameters();
@@ -98,7 +98,7 @@ public class MenuItemDaoSqlImpl implements MenuItemDao{
 		MenuItem m = null;
 		try {
 			Connection conn = ConnectionHandler.getConnection();
-			String sql = "select * from menu_item where me_id=?";
+			String sql = "select me_id,me_name,me_price,me_active,me_dol,me_category,me_freedelivery from menu_item where me_id=?";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setLong(1, menuItemId);
 			ResultSet rs = stmt.executeQuery();
